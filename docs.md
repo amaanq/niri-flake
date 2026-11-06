@@ -1371,6 +1371,38 @@ If multiple outputs with `focus-at-startup` are connected, then the one with the
 When none of the connected outputs are explicitly focus-at-startup, niri will focus the first one sorted by name (same output sorting as used elsewhere in niri).
 
 
+## `programs.niri.settings.outputs.<name>.hdr`
+- type: `null or (submodule)`
+- default: `null`
+
+HDR signalling on this output.
+
+When this is null, the output stays SDR. Set it to `{ }` to enable HDR with the luminance values from the EDID.
+
+
+## `programs.niri.settings.outputs.<name>.hdr.min-luminance`
+- type: `null or floating point number or signed integer`
+- default: `null`
+
+Override of the display's minimum luminance in cd/m². By default this comes from the EDID.
+
+
+## `programs.niri.settings.outputs.<name>.hdr.peak-luminance`
+- type: `null or floating point number or signed integer`
+- default: `null`
+
+Override of the display's peak luminance in cd/m², used for tone mapping. By default this comes from the EDID.
+
+
+## `programs.niri.settings.outputs.<name>.hdr.reference-luminance`
+- type: `null or floating point number or signed integer`
+- default: `null`
+
+Luminance of SDR white, and of the reference white of HDR content, in cd/m².
+
+Raise this if SDR content looks too dim compared to SDR mode.
+
+
 ## `programs.niri.settings.outputs.<name>.mode`
 - type: `null or (submodule)`
 - default: `null`
