@@ -1412,6 +1412,15 @@ Luminance of SDR white, and of the reference white of HDR content, in cd/m².
 Raise this if SDR content looks too dim compared to SDR mode.
 
 
+## `programs.niri.settings.outputs.<name>.hdr.sdr-gamut-wideness`
+- type: `null or floating point number or signed integer`
+- default: `null`
+
+How far SDR colors stretch from sRGB toward the display's primaries, from 0 to 1.
+
+Monitors in SDR mode often show sRGB on their native gamut, so 1 matches that look.
+
+
 ## `programs.niri.settings.outputs.<name>.mode`
 - type: `null or (submodule)`
 - default: `null`

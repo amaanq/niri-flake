@@ -1931,6 +1931,13 @@
                       Override of the display's minimum luminance in cd/m². By default this comes from the EDID.
                     '';
                   };
+                  sdr-gamut-wideness = nullable float-or-int // {
+                    description = ''
+                      How far SDR colors stretch from sRGB toward the display's primaries, from 0 to 1.
+
+                      Monitors in SDR mode often show sRGB on their native gamut, so 1 matches that look.
+                    '';
+                  };
                 })
                 // {
                   description = ''
@@ -3655,6 +3662,7 @@
                   (nullable leaf "reference-luminance" cfg.hdr.reference-luminance)
                   (nullable leaf "peak-luminance" cfg.hdr.peak-luminance)
                   (nullable leaf "min-luminance" cfg.hdr.min-luminance)
+                  (nullable leaf "sdr-gamut-wideness" cfg.hdr.sdr-gamut-wideness)
                 ]
               ))
             ])
