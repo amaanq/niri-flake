@@ -1380,6 +1380,15 @@ HDR signalling on this output.
 When this is null, the output stays SDR. Set it to `{ }` to enable HDR with the luminance values from the EDID.
 
 
+## `programs.niri.settings.outputs.<name>.hdr.auto`
+- type: `boolean`
+- default: `false`
+
+Enable HDR signalling only while a fullscreen window shows HDR content, and stay SDR otherwise.
+
+Switching takes a modeset, and HDR turns off 3 seconds after the HDR content goes away.
+
+
 ## `programs.niri.settings.outputs.<name>.hdr.min-luminance`
 - type: `null or floating point number or signed integer`
 - default: `null`

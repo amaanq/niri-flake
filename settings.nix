@@ -1907,6 +1907,13 @@
 
               hdr =
                 nullable (record {
+                  auto = optional types.bool false // {
+                    description = ''
+                      Enable HDR signalling only while a fullscreen window shows HDR content, and stay SDR otherwise.
+
+                      Switching takes a modeset, and HDR turns off 3 seconds after the HDR content goes away.
+                    '';
+                  };
                   reference-luminance = nullable float-or-int // {
                     description = ''
                       Luminance of SDR white, and of the reference white of HDR content, in cd/m².
@@ -3644,6 +3651,7 @@
               ))
               (optional-node (cfg.hdr != null) (
                 plain "hdr" [
+                  (flag' "auto" cfg.hdr.auto)
                   (nullable leaf "reference-luminance" cfg.hdr.reference-luminance)
                   (nullable leaf "peak-luminance" cfg.hdr.peak-luminance)
                   (nullable leaf "min-luminance" cfg.hdr.min-luminance)
