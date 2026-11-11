@@ -494,6 +494,11 @@
                 };
 
                 services.displayManager.sessionPackages = [ cfg.package ];
+                systemd.packages = [ cfg.package ];
+                systemd.user.services.niri = {
+                  restartIfChanged = false;
+                  enableDefaultPath = false;
+                };
                 hardware.graphics.enable = nixpkgs.lib.mkDefault true;
 
                 xdg.portal = {
